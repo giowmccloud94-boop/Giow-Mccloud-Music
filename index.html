@@ -3,12 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <meta
-        name="description"
-        content="Sitio oficial de Giow Mccloud Music. Videos, lanzamientos y contenido musical."
-    >
-
+    <meta name="description" content="Sitio oficial de Giow Mccloud Music. Videos, lanzamientos y contenido musical.">
     <title>Giow Mccloud Music</title>
 
     <style>
@@ -27,12 +22,7 @@
             font-family: Arial, Helvetica, sans-serif;
             color: #ffffff;
             background:
-                radial-gradient(
-                    circle at top,
-                    #342056 0%,
-                    #15101f 38%,
-                    #08080c 100%
-                );
+                radial-gradient(circle at top, #342056 0%, #15101f 38%, #08080c 100%);
         }
 
         a {
@@ -113,14 +103,14 @@
             font-size: 1.45rem;
         }
 
-        .video {
+        .video-youtube {
             position: relative;
             width: 100%;
             aspect-ratio: 16 / 9;
             background: #000000;
         }
 
-        .video iframe {
+        .video-youtube iframe {
             position: absolute;
             inset: 0;
             width: 100%;
@@ -128,18 +118,20 @@
             border: 0;
         }
 
-        .tiktok-contenedor {
+        .video-tiktok {
             display: flex;
             justify-content: center;
             padding: 10px 20px 30px;
             background: rgba(0, 0, 0, 0.2);
         }
 
-        .tiktok-embed {
+        .video-tiktok iframe {
             width: 100%;
-            min-width: 280px;
-            max-width: 605px;
-            margin: 0 !important;
+            max-width: 420px;
+            height: 700px;
+            border: 0;
+            border-radius: 15px;
+            background: #000000;
         }
 
         .single {
@@ -247,27 +239,12 @@
             .informacion-single {
                 padding: 28px 22px;
             }
-            .video-tiktok {
-    display: flex;
-    justify-content: center;
-    padding: 10px 20px 30px;
-    background: rgba(0, 0, 0, 0.2);
-}
+        }
 
-.video-tiktok iframe {
-    width: 100%;
-    max-width: 420px;
-    height: 700px;
-    border: 0;
-    border-radius: 15px;
-    background: #000000;
-}
-
-@media (max-width: 500px) {
-    .video-tiktok iframe {
-        height: 620px;
-    }
-}
+        @media (max-width: 500px) {
+            .video-tiktok iframe {
+                height: 620px;
+            }
         }
     </style>
 </head>
@@ -281,14 +258,13 @@
     <main>
         <section class="contenido">
 
-            <!-- PREVIEW DE YOUTUBE -->
             <article class="tarjeta">
                 <div class="encabezado-tarjeta">
                     <span>YouTube</span>
                     <h2>Último video</h2>
                 </div>
 
-                <div class="video">
+                <div class="video-youtube">
                     <iframe
                         src="https://www.youtube-nocookie.com/embed/aA6qDdSPDAY?rel=0"
                         title="Último video de Giow Mccloud"
@@ -298,44 +274,25 @@
                         allowfullscreen>
                     </iframe>
                 </div>
-
-             
             </article>
 
-            <!-- ÚLTIMO VIDEO CORTO DE TIKTOK -->
             <article class="tarjeta">
                 <div class="encabezado-tarjeta">
                     <span>TikTok</span>
                     <h2>Último video corto</h2>
-            <!-- VIDEO DE TIKTOK -->
-<article class="tarjeta">
-    <div class="encabezado-tarjeta">
-        <span>TikTok</span>
-        <h2>Último video corto</h2>
-    </div>
+                </div>
 
-    <div class="video-tiktok">
-        <iframe
-            src="https://www.tiktok.com/player/v1/7528089060875799839?controls=1&description=1&music_info=1"
-            title="Video de TikTok de Giow Mccloud"
-            loading="lazy"
-            allow="fullscreen; autoplay"
-            allowfullscreen>
-        </iframe>
-    </div>
-
-    <div class="youtube-ayuda">
-        <a
-            href="https://www.tiktok.com/@giowmccloud/video/7528089060875799839"
-            target="_blank"
-            rel="noopener noreferrer">
-            Ver directamente en TikTok
-        </a>
-    </div>
-</article>
+                <div class="video-tiktok">
+                    <iframe
+                        src="https://www.tiktok.com/player/v1/7528089060875799839?controls=1&description=1&music_info=1"
+                        title="Video de TikTok de Giow Mccloud"
+                        loading="lazy"
+                        allow="fullscreen; autoplay"
+                        allowfullscreen>
+                    </iframe>
+                </div>
             </article>
 
-            <!-- PREVIEW DEL ÚLTIMO SINGLE -->
             <article class="tarjeta tarjeta-destacada">
                 <div class="single">
 
@@ -361,7 +318,6 @@
                                 src="musica/preview-ultimo-single.mp3"
                                 type="audio/mpeg"
                             >
-
                             Tu navegador no permite reproducir este audio.
                         </audio>
 
@@ -399,12 +355,8 @@
     </main>
 
     <footer>
-        <p>
-            © <span id="anio"></span> Giow Mccloud Music
-        </p>
+        <p>© <span id="anio"></span> Giow Mccloud Music</p>
     </footer>
-
-    <script async src="https://www.tiktok.com/embed.js"></script>
 
     <script>
         const anio = document.getElementById("anio");
